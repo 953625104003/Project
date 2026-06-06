@@ -1,0 +1,13 @@
+Future<void> updateNote(
+    String id,
+    String title,
+    String content) async {
+
+  await FirebaseFirestore.instance
+      .collection('notes')
+      .doc(id)
+      .update({
+    'title': title,
+    'content': content,
+  });
+}
