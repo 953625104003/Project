@@ -1,0 +1,6 @@
+Future<void> deleteNote(String id) async {
+  await FirebaseFirestore.instance
+      .collection('notes')
+      .doc(id)
+      .delete();
+}
