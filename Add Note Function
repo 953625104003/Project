@@ -1,0 +1,7 @@
+Future<void> addNote(String title, String content) async {
+  await FirebaseFirestore.instance.collection('notes').add({
+    'title': title,
+    'content': content,
+    'createdAt': Timestamp.now(),
+  });
+}
